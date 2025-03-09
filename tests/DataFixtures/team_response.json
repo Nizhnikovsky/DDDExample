@@ -1,0 +1,14 @@
+{
+  "teamId": "01957109-b207-7488-a995-24af7d598730",
+  "name": "Atletico de Madrid",
+  "yearFounded": 1903,
+  "stadium": "Riad Air Metropolitano",
+  "city": "Madrid",
+  "players": [
+    {
+      "playerId": "0195715a-83dd-75da-85b3-8ff975356616",
+      "firstName": "Jan",
+      "lastName": "Oblak"
+    }
+  ]
+}
