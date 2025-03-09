@@ -24,7 +24,7 @@ class Team
      */
     public function addPlayer(TeamPlayer $player): void
     {
-        if (count($this->players) >= 11) {
+        if (count($this->players) == 11) {
             throw new TeamAmountExceededException();
         }
 
