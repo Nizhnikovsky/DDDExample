@@ -9,6 +9,8 @@ use Symfony\Contracts\EventDispatcher\EventDispatcherInterface;
 
 class Team
 {
+    const TEAM_MAX_PLAYERS = 11;
+
     public function __construct(
         private readonly Uuid $teamId,
         private readonly string $name,
@@ -80,6 +82,6 @@ class Team
 
     public function isFull(): bool
     {
-        return 11 == count($this->players);
+        return self::TEAM_MAX_PLAYERS == count($this->players);
     }
 }
