@@ -4,7 +4,6 @@
 namespace App\Domain\Team\Model;
 
 use App\Shared\ValueObjects\Uuid;
-
 readonly class TeamPlayer
 {
     public function __construct(

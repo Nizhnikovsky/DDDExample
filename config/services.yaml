@@ -18,13 +18,29 @@ services:
         class: Psr\Log\LoggerInterface
         factory: [ '@monolog.logger', 'player_event' ]
 
+    App\Infrastructure\Doctrine\Player\Repository\PlayerRepository:
+        arguments:
+            $registry: '@doctrine'
+    App\Domain\Player\Repository\PlayerRepository: '@App\Infrastructure\Doctrine\Player\Repository\PlayerRepository'
+
+    App\Infrastructure\Doctrine\Team\Repository\TeamRepository:
+        arguments:
+            $registry: '@doctrine'
+    App\Domain\Team\Repository\TeamRepository: '@App\Infrastructure\Doctrine\Team\Repository\TeamRepository'
+
+    App\Infrastructure\Doctrine\Validator\UniqueEntityValidator:
+        arguments:
+            $entityManager: '@doctrine.orm.entity_manager'
+        tags: [ 'validator.constraint_validator' ]
+
+
     # makes classes in src/ available to be used as services
     # this creates a service per class whose id is the fully-qualified class name
     App\:
         resource: '../src/'
         exclude:
             - '../src/DependencyInjection/'
-            - '../src/Infrastructure/Entity/'
+            - '../src/Infrastructure/Doctrine/'
             - '../src/Kernel.php'
 
     # add more service definitions when explicit configuration is needed

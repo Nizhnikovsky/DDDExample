@@ -3,7 +3,6 @@
 
 namespace App\Domain\Team\DTO;
 
-
 class TeamDTO
 {
     public function __construct(

@@ -4,7 +4,6 @@
 namespace App\Domain\Team\Event;
 
 use App\Shared\ValueObjects\Uuid;
-
 readonly class TeamRelocatedEvent
 {
     public function __construct(

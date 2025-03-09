@@ -1,11 +1,11 @@
 <?php
 
 
-namespace App\src\Infrastructure\Doctrine\Player\Entity;
+namespace App\Infrastructure\Doctrine\Player\Entity;
 
 use App\Domain\Player\Enum\PlayerPositionEnum;
-use App\src\Infrastructure\Doctrine\Player\Repository\PlayerRepository;
-use App\src\Infrastructure\Doctrine\Team\Entity\Team;
+use App\Infrastructure\Doctrine\Player\Repository\PlayerRepository;
+use App\Infrastructure\Doctrine\Team\Entity\Team;
 use DateTimeInterface;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;

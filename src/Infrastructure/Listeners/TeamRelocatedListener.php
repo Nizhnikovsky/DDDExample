@@ -4,7 +4,7 @@
 namespace App\Infrastructure\Listeners;
 
 use App\Domain\Team\Event\TeamRelocatedEvent;
-use App\src\Infrastructure\Doctrine\Player\Repository\PlayerRepository;
+use App\Infrastructure\Doctrine\Player\Repository\PlayerRepository;
 use Monolog\Attribute\WithMonologChannel;
 use Psr\Log\LoggerInterface;
 use Symfony\Component\EventDispatcher\Attribute\AsEventListener;

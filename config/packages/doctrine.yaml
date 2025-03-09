@@ -18,12 +18,18 @@ doctrine:
             Doctrine\DBAL\Platforms\PostgreSQLPlatform: identity
         auto_mapping: true
         mappings:
-            App:
+            Player:
                 type: attribute
                 is_bundle: false
-                dir: '%kernel.project_dir%/src/Infrastructure/Doctrine/Entity'
-                prefix: 'App\Infrastructure\Doctrine\Entity'
-                alias: App
+                dir: '%kernel.project_dir%/src/Infrastructure/Doctrine/Player'
+                prefix: 'App\Infrastructure\Doctrine\Player'
+                alias: Player
+            Team:
+                type: attribute
+                is_bundle: false
+                dir: '%kernel.project_dir%/src/Infrastructure/Doctrine/Team'
+                prefix: 'App\Infrastructure\Doctrine\Team'
+                alias: Team
         controller_resolver:
             auto_mapping: false
 

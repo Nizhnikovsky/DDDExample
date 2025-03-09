@@ -11,10 +11,9 @@ use App\Domain\Player\Repository\PlayerRepository;
 use App\Domain\Player\Service\PlayerService;
 use App\Shared\Exception\PlayerNotFoundException;
 use App\Shared\ValueObjects\Uuid;
-use App\src\Domain\Player\ValueObject\AgeValue;
-use App\src\Domain\Player\ValueObject\NumberValue;
-use App\src\Domain\Player\ValueObject\PositionValue;
-use JetBrains\PhpStorm\NoReturn;
+use App\Domain\Player\ValueObject\AgeValue;
+use App\Domain\Player\ValueObject\NumberValue;
+use App\Domain\Player\ValueObject\PositionValue;
 use PHPUnit\Framework\TestCase;
 
 class PlayerServiceTest extends TestCase
@@ -66,7 +65,7 @@ class PlayerServiceTest extends TestCase
         $this->playerService->getPlayer(new Uuid('0195715a-83dd-75da-85b3-8ff975356745'));
     }
 
-    #[NoReturn] public function testCreatePlayer()
+    public function testCreatePlayer(): void
     {
         $createPlayerDTO = new PlayerDTO('Leo', 'Messi', 36, 11, 'forward');
         $team = new PlayerTeam(new Uuid(), 'FC Barcelona');
