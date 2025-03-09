@@ -1,9 +1,10 @@
 <?php
 
 
-namespace App\Infrastructure\Doctrine\Entity;
+namespace App\src\Infrastructure\Doctrine\Team\Entity;
 
-use App\Infrastructure\Doctrine\Repository\TeamRepository;
+use App\src\Infrastructure\Doctrine\Player\Entity\Player;
+use App\src\Infrastructure\Doctrine\Team\Repositoty\TeamRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;

@@ -6,15 +6,15 @@ namespace App\Domain\Player\Service;
 use App\Domain\Player\DTO\PlayerDTO;
 use App\Domain\Player\DTO\UpdatePlayerDTO;
 use App\Domain\Player\Enum\PlayerPositionEnum;
-use App\Domain\Player\Model\AgeValue;
-use App\Domain\Player\Model\NumberValue;
 use App\Domain\Player\Model\Player;
 use App\Domain\Player\Model\PlayerTeam;
-use App\Domain\Player\Model\PositionValue;
 use App\Domain\Player\Repository\PlayerRepository;
 use App\Shared\Exception\PlayerNotFoundException;
 use App\Shared\Exception\ValueValidationException;
 use App\Shared\ValueObjects\Uuid;
+use App\src\Domain\Player\ValueObject\AgeValue;
+use App\src\Domain\Player\ValueObject\NumberValue;
+use App\src\Domain\Player\ValueObject\PositionValue;
 
 class PlayerService
 {

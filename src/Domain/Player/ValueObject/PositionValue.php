@@ -1,7 +1,7 @@
 <?php
 
 
-namespace App\Domain\Player\Model;
+namespace App\src\Domain\Player\ValueObject;
 
 use App\Domain\Player\Enum\PlayerPositionEnum;
 use App\Shared\Exception\ValueValidationException;

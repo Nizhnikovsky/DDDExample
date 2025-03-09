@@ -1,16 +1,16 @@
 <?php
 
 
-namespace App\Infrastructure\Doctrine\Repository;
+namespace App\src\Infrastructure\Doctrine\Team\Repositoty;
 
 use App\Domain\Team\Model\Team;
 use App\Domain\Team\Model\TeamPlayer;
 use App\Domain\Team\Repository\TeamRepository as TeamRepositoryInterface;
-use App\Infrastructure\Doctrine\Entity\Player;
-use App\Infrastructure\Doctrine\Entity\Team as TeamEntity;
 use App\Shared\Exception\TeamNotFoundException;
 use App\Shared\Exception\ValueValidationException;
 use App\Shared\ValueObjects\Uuid;
+use App\src\Infrastructure\Doctrine\Player\Entity\Player;
+use App\src\Infrastructure\Doctrine\Team\Entity\Team as TeamEntity;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 

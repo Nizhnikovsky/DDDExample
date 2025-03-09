@@ -4,8 +4,8 @@
 namespace App\Presentation\DTO\Request\Player;
 
 use App\Domain\Player\Enum\PlayerPositionEnum;
-use App\Infrastructure\Doctrine\Entity\Player;
 use App\Infrastructure\Doctrine\Validator\UniqueEntityConstraint;
+use App\src\Infrastructure\Doctrine\Player\Entity\Player;
 use Symfony\Component\Validator\Constraints as Assert;
 
 readonly class CreatePlayerDTO

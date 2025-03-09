@@ -4,6 +4,9 @@
 namespace App\Domain\Player\Model;
 
 use App\Shared\ValueObjects\Uuid;
+use App\src\Domain\Player\ValueObject\AgeValue;
+use App\src\Domain\Player\ValueObject\NumberValue;
+use App\src\Domain\Player\ValueObject\PositionValue;
 
 class Player
 {

@@ -7,21 +7,20 @@ namespace App\Tests\TestCase\Controller\Player;
 use App\Domain\Player\DTO\PlayerDTO;
 use App\Domain\Player\DTO\UpdatePlayerDTO;
 use App\Domain\Player\Enum\PlayerPositionEnum;
-use App\Domain\Player\Model\AgeValue;
-use App\Domain\Player\Model\NumberValue;
 use App\Domain\Player\Model\Player;
 use App\Domain\Player\Model\PlayerTeam;
-use App\Domain\Player\Model\PositionValue;
 use App\Domain\Player\Service\PlayerService;
 use App\Domain\Team\Model\Team;
 use App\Domain\Team\Service\TeamService;
-use App\Infrastructure\Doctrine\Repository\PlayerRepository;
-use App\Infrastructure\Doctrine\Repository\TeamRepository;
 use App\Shared\Exception\PlayerNotFoundException;
 use App\Shared\ValueObjects\Uuid;
+use App\src\Domain\Player\ValueObject\AgeValue;
+use App\src\Domain\Player\ValueObject\NumberValue;
+use App\src\Domain\Player\ValueObject\PositionValue;
+use App\src\Infrastructure\Doctrine\Player\Repository\PlayerRepository;
+use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
 class PlayerActionsTest extends WebTestCase
 {

@@ -5,17 +5,15 @@ namespace App\Tests\TestCase\Service;
 
 use App\Domain\Player\DTO\PlayerDTO;
 use App\Domain\Player\Enum\PlayerPositionEnum;
-use App\Domain\Player\Model\AgeValue;
-use App\Domain\Player\Model\NumberValue;
 use App\Domain\Player\Model\Player;
 use App\Domain\Player\Model\PlayerTeam;
-use App\Domain\Player\Model\PositionValue;
 use App\Domain\Player\Repository\PlayerRepository;
 use App\Domain\Player\Service\PlayerService;
-use App\Domain\Team\DTO\TeamDTO;
-use App\Domain\Team\Model\Team;
 use App\Shared\Exception\PlayerNotFoundException;
 use App\Shared\ValueObjects\Uuid;
+use App\src\Domain\Player\ValueObject\AgeValue;
+use App\src\Domain\Player\ValueObject\NumberValue;
+use App\src\Domain\Player\ValueObject\PositionValue;
 use JetBrains\PhpStorm\NoReturn;
 use PHPUnit\Framework\TestCase;
 

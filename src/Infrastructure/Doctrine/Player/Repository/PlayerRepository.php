@@ -1,21 +1,20 @@
 <?php
 
 
-namespace App\Infrastructure\Doctrine\Repository;
+namespace App\src\Infrastructure\Doctrine\Player\Repository;
 
-use App\Domain\Player\Enum\PlayerPositionEnum;
-use App\Domain\Player\Model\AgeValue;
-use App\Domain\Player\Model\NumberValue;
 use App\Domain\Player\Model\Player;
 use App\Domain\Player\Model\PlayerTeam;
-use App\Domain\Player\Model\PositionValue;
 use App\Domain\Player\Repository\PlayerRepository as PlayerRepositoryInterface;
-use App\Infrastructure\Doctrine\Entity\Player as PlayerEntity;
-use App\Infrastructure\Doctrine\Entity\Team as TeamEntity;
 use App\Shared\Exception\PlayerNotFoundException;
 use App\Shared\Exception\TeamNotFoundException;
 use App\Shared\Exception\ValueValidationException;
 use App\Shared\ValueObjects\Uuid;
+use App\src\Domain\Player\ValueObject\AgeValue;
+use App\src\Domain\Player\ValueObject\NumberValue;
+use App\src\Domain\Player\ValueObject\PositionValue;
+use App\src\Infrastructure\Doctrine\Player\Entity\Player as PlayerEntity;
+use App\src\Infrastructure\Doctrine\Team\Entity\Team as TeamEntity;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
