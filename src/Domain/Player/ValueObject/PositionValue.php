@@ -1,6 +1,5 @@
 <?php
 
-
 namespace App\Domain\Player\ValueObject;
 
 use App\Domain\Player\Enum\PlayerPositionEnum;
@@ -27,9 +26,7 @@ readonly class PositionValue
     private function validatePosition(PlayerPositionEnum $position): void
     {
         if (!in_array($position, PlayerPositionEnum::cases())) {
-            throw new ValueValidationException(
-                sprintf('Value should be one of %s', implode(',', PlayerPositionEnum::values()))
-            );
+            throw new ValueValidationException(sprintf('Value should be one of %s', implode(',', PlayerPositionEnum::values())));
         }
     }
 }

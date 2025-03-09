@@ -1,6 +1,5 @@
 <?php
 
-
 namespace App\Infrastructure\Doctrine\Team\Entity;
 
 use App\Infrastructure\Doctrine\Player\Entity\Player;
@@ -30,7 +29,7 @@ class Team
     #[ORM\Column(type: 'string', length: 100)]
     private string $stadium;
 
-    #[ORM\OneToMany(targetEntity: Player::class, mappedBy: 'team', cascade: ['persist','remove'])]
+    #[ORM\OneToMany(targetEntity: Player::class, mappedBy: 'team', cascade: ['persist', 'remove'])]
     private Collection $players;
 
     public function __construct()
@@ -38,98 +37,61 @@ class Team
         $this->players = new ArrayCollection();
     }
 
-    /**
-     * @return string
-     */
     public function getId(): string
     {
         return $this->id;
     }
 
-    /**
-     * @param Uuid $id
-     */
     public function setId(Uuid $id): void
     {
         $this->id = $id;
     }
 
-    /**
-     * @return string
-     */
     public function getName(): string
     {
         return $this->name;
     }
 
-    /**
-     * @param string $name
-     */
     public function setName(string $name): void
     {
         $this->name = $name;
     }
 
-    /**
-     * @return string
-     */
     public function getCity(): string
     {
         return $this->city;
     }
 
-    /**
-     * @param string $city
-     */
     public function setCity(string $city): void
     {
         $this->city = $city;
     }
 
-    /**
-     * @return int
-     */
     public function getYearFounded(): int
     {
         return $this->yearFounded;
     }
 
-    /**
-     * @param int $yearFounded
-     */
     public function setYearFounded(int $yearFounded): void
     {
         $this->yearFounded = $yearFounded;
     }
 
-    /**
-     * @return string
-     */
     public function getStadium(): string
     {
         return $this->stadium;
     }
 
-    /**
-     * @param string $stadium
-     */
     public function setStadium(string $stadium): void
     {
         $this->stadium = $stadium;
     }
 
-    /**
-     * @return Collection
-     */
     public function getPlayers(): Collection
     {
         return $this->players;
     }
 
-    /**
-     * @param array $players
-     * @return Team
-     */
     public function setPlayers(array $players): self
     {
         $this->players->clear();

@@ -1,6 +1,5 @@
 <?php
 
-
 namespace App\Shared\Abstractions;
 
 use AutoMapperPlus\AutoMapperInterface;
@@ -10,7 +9,6 @@ use Symfony\Contracts\Service\Attribute\Required;
 
 class RestController extends AbstractController
 {
-
     protected AutoMapperInterface $mapper;
 
     #[Required]

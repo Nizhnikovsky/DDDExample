@@ -1,6 +1,5 @@
 <?php
 
-
 namespace App\Infrastructure\Doctrine\Validator;
 
 use Doctrine\ORM\EntityManagerInterface;

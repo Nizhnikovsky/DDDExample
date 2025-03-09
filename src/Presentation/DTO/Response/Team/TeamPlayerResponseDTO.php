@@ -1,6 +1,5 @@
 <?php
 
-
 namespace App\Presentation\DTO\Response\Team;
 
 readonly class TeamPlayerResponseDTO
@@ -9,6 +8,6 @@ readonly class TeamPlayerResponseDTO
         public string $playerId,
         public string $firstName,
         public string $lastName,
-    ){
+    ) {
     }
 }

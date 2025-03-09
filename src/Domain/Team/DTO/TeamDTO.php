@@ -1,6 +1,5 @@
 <?php
 
-
 namespace App\Domain\Team\DTO;
 
 class TeamDTO
@@ -10,5 +9,6 @@ class TeamDTO
         public readonly int $yearFounded,
         public string $stadium,
         public string $city,
-    ){}
+    ) {
+    }
 }

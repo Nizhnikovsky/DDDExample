@@ -1,6 +1,5 @@
 <?php
 
-
 namespace App\Domain\Team\Model;
 
 use App\Domain\Team\Event\TeamRelocatedEvent;
@@ -16,8 +15,9 @@ class Team
         private readonly int $yearFounded,
         private string $stadium,
         private string $city,
-        private array $players = []
-    ){}
+        private array $players = [],
+    ) {
+    }
 
     /**
      * @throws TeamAmountExceededException
@@ -48,49 +48,31 @@ class Team
         $this->stadium = $stadium;
     }
 
-    /**
-     * @return Uuid
-     */
     public function getTeamId(): Uuid
     {
         return $this->teamId;
     }
 
-    /**
-     * @return string
-     */
     public function getName(): string
     {
         return $this->name;
     }
 
-    /**
-     * @return int
-     */
     public function getYearFounded(): int
     {
         return $this->yearFounded;
     }
 
-    /**
-     * @return string
-     */
     public function getStadium(): string
     {
         return $this->stadium;
     }
 
-    /**
-     * @return string
-     */
     public function getCity(): string
     {
         return $this->city;
     }
 
-    /**
-     * @return array
-     */
     public function getPlayers(): array
     {
         return $this->players;
@@ -98,6 +80,6 @@ class Team
 
     public function isFull(): bool
     {
-        return count($this->players) == 11;
+        return 11 == count($this->players);
     }
 }

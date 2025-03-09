@@ -1,6 +1,5 @@
 <?php
 
-
 namespace App\Shared\Exception;
 
 class TeamNotFoundException extends \Exception implements ApiExceptionInterface

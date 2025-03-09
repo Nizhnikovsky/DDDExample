@@ -1,6 +1,5 @@
 <?php
 
-
 namespace App\Infrastructure\Doctrine\Validator;
 
 use Doctrine\ORM\EntityManagerInterface;
@@ -10,7 +9,9 @@ use Symfony\Component\Validator\Exception\UnexpectedTypeException;
 
 class UniqueEntityValidator extends ConstraintValidator
 {
-    public function __construct(private EntityManagerInterface $entityManager) {}
+    public function __construct(private EntityManagerInterface $entityManager)
+    {
+    }
 
     public function validate(mixed $value, Constraint $constraint): void
     {
@@ -18,7 +19,7 @@ class UniqueEntityValidator extends ConstraintValidator
             throw new UnexpectedTypeException($constraint, UniqueEntityConstraint::class);
         }
 
-        if ($value === null || $value === '') {
+        if (null === $value || '' === $value) {
             return; // Allow empty values (use NotBlank for required validation)
         }
 

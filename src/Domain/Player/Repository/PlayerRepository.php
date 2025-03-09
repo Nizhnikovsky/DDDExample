@@ -14,7 +14,10 @@ interface PlayerRepository
      * @throws PlayerNotFoundException
      */
     public function getPlayer(Uuid $playerId): ?Player;
+
     public function createPlayer(Player $player): Player;
+
     public function updatePlayer(Player $player): Player;
+
     public function deletePlayer(Uuid $playerId): void;
 }

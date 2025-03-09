@@ -1,6 +1,5 @@
 <?php
 
-
 namespace App\Shared\Dictionary;
 
 class ValidationRegExpMask

@@ -1,6 +1,5 @@
 <?php
 
-
 namespace App\Shared\Exception;
 
 class PlayerNotFoundException extends \Exception implements ApiExceptionInterface

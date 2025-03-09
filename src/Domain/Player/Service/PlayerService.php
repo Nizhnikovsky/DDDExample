@@ -1,6 +1,5 @@
 <?php
 
-
 namespace App\Domain\Player\Service;
 
 use App\Domain\Player\DTO\PlayerDTO;
@@ -9,18 +8,18 @@ use App\Domain\Player\Enum\PlayerPositionEnum;
 use App\Domain\Player\Model\Player;
 use App\Domain\Player\Model\PlayerTeam;
 use App\Domain\Player\Repository\PlayerRepository;
-use App\Shared\Exception\PlayerNotFoundException;
-use App\Shared\Exception\ValueValidationException;
-use App\Shared\ValueObjects\Uuid;
 use App\Domain\Player\ValueObject\AgeValue;
 use App\Domain\Player\ValueObject\NumberValue;
 use App\Domain\Player\ValueObject\PositionValue;
+use App\Shared\Exception\PlayerNotFoundException;
+use App\Shared\Exception\ValueValidationException;
+use App\Shared\ValueObjects\Uuid;
 
 class PlayerService
 {
     public function __construct(
-        private readonly PlayerRepository $playerRepository
-    ){
+        private readonly PlayerRepository $playerRepository,
+    ) {
     }
 
     /**
@@ -43,7 +42,6 @@ class PlayerService
 
         return $player;
     }
-
 
     /**
      * @throws ValueValidationException

@@ -1,6 +1,5 @@
 <?php
 
-
 namespace App\Presentation\Mapper\Player;
 
 use App\Domain\Player\DTO\UpdatePlayerDTO as DomainUpdatePlayerDTO;
@@ -12,7 +11,6 @@ use AutoMapperPlus\Configuration\AutoMapperConfigInterface;
 
 class UpdatePlayerDTOToDomainUpdatePlayerDTOMapping implements AutoMapperConfiguratorInterface
 {
-
     public function configure(AutoMapperConfigInterface $config): void
     {
         $config->registerMapping(UpdatePlayerDTO::class, DomainUpdatePlayerDTO::class)
@@ -22,6 +20,7 @@ class UpdatePlayerDTOToDomainUpdatePlayerDTOMapping implements AutoMapperConfigu
                     if (!$context['playerId']) {
                         throw new \Exception('missed playerId value');
                     }
+
                     return new Uuid($context['playerId']);
                 });
     }

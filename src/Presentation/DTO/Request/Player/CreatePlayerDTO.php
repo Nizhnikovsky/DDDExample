@@ -1,11 +1,10 @@
 <?php
 
-
 namespace App\Presentation\DTO\Request\Player;
 
 use App\Domain\Player\Enum\PlayerPositionEnum;
-use App\Infrastructure\Doctrine\Validator\UniqueEntityConstraint;
 use App\Infrastructure\Doctrine\Player\Entity\Player;
+use App\Infrastructure\Doctrine\Validator\UniqueEntityConstraint;
 use Symfony\Component\Validator\Constraints as Assert;
 
 readonly class CreatePlayerDTO
@@ -27,7 +26,7 @@ readonly class CreatePlayerDTO
             minMessage: 'Player last name must be at least {{ limit }} characters long',
             maxMessage: 'Player last name cannot be longer than {{ limit }} characters',
         )]
-        #[UniqueEntityConstraint(entityClass: Player::class, field: "lastName", message: "This last name is already taken.")]
+        #[UniqueEntityConstraint(entityClass: Player::class, field: 'lastName', message: 'This last name is already taken.')]
         public string $lastName,
 
         #[Assert\NotBlank(message: 'Player age is required')]
@@ -36,7 +35,7 @@ readonly class CreatePlayerDTO
 
         #[Assert\NotBlank(message: 'Player number is required')]
         #[Assert\LessThanOrEqual(99), Assert\Positive]
-        #[UniqueEntityConstraint(entityClass: Player::class, field: "playerNumber", message: "This player number is already taken.")]
+        #[UniqueEntityConstraint(entityClass: Player::class, field: 'playerNumber', message: 'This player number is already taken.')]
         public int $playerNumber,
 
         #[Assert\NotBlank(message: 'Player position is required')]
@@ -46,6 +45,6 @@ readonly class CreatePlayerDTO
         #[Assert\NotBlank(message: 'Player team is required')]
         #[Assert\Uuid()]
         public string $teamId,
-    ){
+    ) {
     }
 }

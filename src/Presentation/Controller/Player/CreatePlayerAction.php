@@ -8,9 +8,9 @@ use App\Domain\Player\DTO\PlayerDTO;
 use App\Domain\Player\Model\PlayerTeam;
 use App\Domain\Player\Service\PlayerService;
 use App\Domain\Team\Service\TeamService;
+use App\Presentation\DTO\Request\Player\CreatePlayerDTO;
 use App\Presentation\DTO\Response\Player\PlayerResponseDTO;
 use App\Shared\Abstractions\RestController;
-use App\Presentation\DTO\Request\Player\CreatePlayerDTO;
 use App\Shared\Exception\TeamFullException;
 use App\Shared\ValueObjects\Uuid;
 use Symfony\Component\HttpFoundation\JsonResponse;
@@ -27,8 +27,10 @@ class CreatePlayerAction extends RestController
 {
     public function __construct(
         private readonly PlayerService $playerService,
-        private readonly TeamService $teamService
-    ){}
+        private readonly TeamService $teamService,
+    ) {
+    }
+
     public function __invoke(#[MapRequestPayload] CreatePlayerDTO $playerDTO): JsonResponse
     {
         $team = $this->teamService->getTeam(new Uuid($playerDTO->teamId));

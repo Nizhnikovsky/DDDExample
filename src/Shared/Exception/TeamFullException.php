@@ -1,6 +1,5 @@
 <?php
 
-
 namespace App\Shared\Exception;
 
 class TeamFullException extends \Exception implements ApiExceptionInterface

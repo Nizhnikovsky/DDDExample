@@ -1,6 +1,5 @@
 <?php
 
-
 namespace App\Infrastructure\Doctrine\Validator;
 
 use Symfony\Component\Validator\Constraint;

@@ -1,6 +1,5 @@
 <?php
 
-
 namespace App\Infrastructure\Listeners;
 
 use App\Domain\Team\Event\TeamRelocatedEvent;
@@ -15,7 +14,7 @@ class TeamRelocatedListener
 {
     public function __construct(
         private readonly LoggerInterface $playerLogger,
-        private readonly PlayerRepository $playerRepository
+        private readonly PlayerRepository $playerRepository,
     ) {
     }
 
@@ -24,7 +23,7 @@ class TeamRelocatedListener
         $teamPlayers = $this->playerRepository->getPlayersByTeamId($event->getTeamId());
         foreach ($teamPlayers as $player) {
             $this->playerLogger->info(sprintf(
-                "Notification to Player %s: Your team %s has been relocated from %s to %s",
+                'Notification to Player %s: Your team %s has been relocated from %s to %s',
                 sprintf('%s %s', $player['firstName'], $player['lastName']),
                 $event->getTeamName(),
                 $event->getOldCity(),

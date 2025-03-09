@@ -1,6 +1,5 @@
 <?php
 
-
 namespace App\Presentation\Controller\Team;
 
 use App\Domain\Team\Service\TeamService;
@@ -20,8 +19,9 @@ use Symfony\Component\Routing\Annotation\Route;
 class GetTeamAction extends RestController
 {
     public function __construct(
-        private readonly TeamService $teamService
-    ){}
+        private readonly TeamService $teamService,
+    ) {
+    }
 
     public function __invoke(string $teamId)
     {

@@ -1,9 +1,8 @@
 <?php
 
-
 namespace App\Presentation\Controller\Player;
 
-
+use App\Domain\Player\DTO\UpdatePlayerDTO as DomainUpdatePlayerDTO;
 use App\Domain\Player\Service\PlayerService;
 use App\Presentation\DTO\Request\Player\UpdatePlayerDTO;
 use App\Presentation\DTO\Response\Player\PlayerResponseDTO;
@@ -13,7 +12,6 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Attribute\MapRequestPayload;
 use Symfony\Component\Routing\Annotation\Route;
-use App\Domain\Player\DTO\UpdatePlayerDTO as DomainUpdatePlayerDTO;
 
 #[Route(
     path: '/api/v1/player/{playerId}',
@@ -24,8 +22,9 @@ use App\Domain\Player\DTO\UpdatePlayerDTO as DomainUpdatePlayerDTO;
 class UpdatePlayer extends RestController
 {
     public function __construct(
-        private readonly PlayerService $playerService
-    ){}
+        private readonly PlayerService $playerService,
+    ) {
+    }
 
     public function __invoke(#[MapRequestPayload] UpdatePlayerDTO $playerDTO, string $playerId): JsonResponse
     {

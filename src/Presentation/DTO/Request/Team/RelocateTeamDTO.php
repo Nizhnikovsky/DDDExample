@@ -1,6 +1,5 @@
 <?php
 
-
 namespace App\Presentation\DTO\Request\Team;
 
 use Symfony\Component\Validator\Constraints as Assert;
@@ -15,6 +14,7 @@ readonly class RelocateTeamDTO
             minMessage: 'City name must be at least {{ limit }} characters long',
             maxMessage: 'City name cannot be longer than {{ limit }} characters',
         )]
-        public string $city
-    ){}
+        public string $city,
+    ) {
+    }
 }

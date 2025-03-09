@@ -1,6 +1,5 @@
 <?php
 
-
 namespace App\Shared\ValueObjects;
 
 use App\Shared\Exception\ValueValidationException;
@@ -13,12 +12,12 @@ class Uuid
     /**
      * @throws ValueValidationException
      */
-    public function __construct(string|null $value = null)
+    public function __construct(?string $value = null)
     {
         if (!$value) {
             $this->value = SymfonyUuid::v7()->toString();
         } elseif (!SymfonyUuid::isValid($value)) {
-            throw new ValueValidationException("Invalid UUID format.");
+            throw new ValueValidationException('Invalid UUID format.');
         } else {
             $this->value = $value;
         }

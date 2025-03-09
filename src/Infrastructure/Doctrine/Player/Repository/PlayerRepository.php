@@ -1,26 +1,24 @@
 <?php
 
-
 namespace App\Infrastructure\Doctrine\Player\Repository;
 
 use App\Domain\Player\Model\Player;
 use App\Domain\Player\Model\PlayerTeam;
 use App\Domain\Player\Repository\PlayerRepository as PlayerRepositoryInterface;
-use App\Shared\Exception\PlayerNotFoundException;
-use App\Shared\Exception\TeamNotFoundException;
-use App\Shared\Exception\ValueValidationException;
-use App\Shared\ValueObjects\Uuid;
 use App\Domain\Player\ValueObject\AgeValue;
 use App\Domain\Player\ValueObject\NumberValue;
 use App\Domain\Player\ValueObject\PositionValue;
 use App\Infrastructure\Doctrine\Player\Entity\Player as PlayerEntity;
 use App\Infrastructure\Doctrine\Team\Entity\Team as TeamEntity;
+use App\Shared\Exception\PlayerNotFoundException;
+use App\Shared\Exception\TeamNotFoundException;
+use App\Shared\Exception\ValueValidationException;
+use App\Shared\ValueObjects\Uuid;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
 class PlayerRepository extends ServiceEntityRepository implements PlayerRepositoryInterface
 {
-
     public function __construct(ManagerRegistry $registry)
     {
         parent::__construct($registry, PlayerEntity::class);
@@ -45,7 +43,7 @@ class PlayerRepository extends ServiceEntityRepository implements PlayerReposito
             throw new PlayerNotFoundException($playerId);
         }
 
-        $playerTeam = new PlayerTeam(new Uuid($playerData["teamId"]), $playerData["teamName"]);
+        $playerTeam = new PlayerTeam(new Uuid($playerData['teamId']), $playerData['teamName']);
         /** @var PlayerEntity $player */
         $player = $playerData[0];
 

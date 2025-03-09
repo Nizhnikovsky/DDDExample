@@ -1,6 +1,5 @@
 <?php
 
-
 namespace App\Domain\Player\ValueObject;
 
 use App\Shared\Exception\ValueValidationException;

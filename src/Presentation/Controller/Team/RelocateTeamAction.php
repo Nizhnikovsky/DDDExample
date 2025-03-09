@@ -1,6 +1,5 @@
 <?php
 
-
 namespace App\Presentation\Controller\Team;
 
 use App\Domain\Team\Service\TeamService;
@@ -22,8 +21,9 @@ use Symfony\Component\Routing\Annotation\Route;
 class RelocateTeamAction extends RestController
 {
     public function __construct(
-       private readonly TeamService $teamService
-    ){}
+        private readonly TeamService $teamService,
+    ) {
+    }
 
     public function __invoke(#[MapRequestPayload] RelocateTeamDTO $teamDTO, string $teamId)
     {

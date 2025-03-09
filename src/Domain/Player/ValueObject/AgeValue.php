@@ -1,6 +1,5 @@
 <?php
 
-
 namespace App\Domain\Player\ValueObject;
 
 use App\Shared\Exception\ValueValidationException;
@@ -11,14 +10,11 @@ readonly class AgeValue
      * @throws ValueValidationException
      */
     public function __construct(
-        private int $value
-    ){
+        private int $value,
+    ) {
         $this->validate($this->value);
     }
 
-    /**
-     * @return int
-     */
     public function getValue(): int
     {
         return $this->value;

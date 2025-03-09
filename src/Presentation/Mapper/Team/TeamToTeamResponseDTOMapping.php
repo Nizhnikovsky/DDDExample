@@ -1,6 +1,5 @@
 <?php
 
-
 namespace App\Presentation\Mapper\Team;
 
 use App\Domain\Team\Model\Team;
@@ -12,11 +11,10 @@ use AutoMapperPlus\Configuration\AutoMapperConfigInterface;
 
 class TeamToTeamResponseDTOMapping implements AutoMapperConfiguratorInterface
 {
-
     public function configure(AutoMapperConfigInterface $config): void
     {
         $config->registerMapping(Team::class, TeamResponseDTO::class)
-            ->forMember('teamId', fn(Team $team) => $team->getTeamId()->value())
+            ->forMember('teamId', fn (Team $team) => $team->getTeamId()->value())
         ->forMember('players', function (Team $team, AutoMapperInterface $mapper): array {
             return $mapper->mapMultiple($team->getPlayers(), TeamPlayerResponseDTO::class);
         });

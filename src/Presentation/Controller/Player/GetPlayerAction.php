@@ -1,6 +1,5 @@
 <?php
 
-
 namespace App\Presentation\Controller\Player;
 
 use App\Domain\Player\Service\PlayerService;
@@ -21,8 +20,9 @@ use Symfony\Component\Routing\Annotation\Route;
 class GetPlayerAction extends RestController
 {
     public function __construct(
-        private readonly PlayerService $playerService
-    ){}
+        private readonly PlayerService $playerService,
+    ) {
+    }
 
     public function __invoke(string $playerId): JsonResponse
     {

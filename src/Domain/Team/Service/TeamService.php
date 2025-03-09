@@ -1,6 +1,5 @@
 <?php
 
-
 namespace App\Domain\Team\Service;
 
 use App\Domain\Team\DTO\TeamDTO;
@@ -12,11 +11,11 @@ use Symfony\Contracts\EventDispatcher\EventDispatcherInterface;
 
 class TeamService
 {
-
     public function __construct(
         private readonly TeamRepository $teamRepository,
-        private readonly EventDispatcherInterface $eventDispatcher
-    ){}
+        private readonly EventDispatcherInterface $eventDispatcher,
+    ) {
+    }
 
     public function createTeam(TeamDTO $teamDTO): Team
     {

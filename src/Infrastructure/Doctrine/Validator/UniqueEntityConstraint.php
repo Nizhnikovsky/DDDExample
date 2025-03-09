@@ -1,6 +1,5 @@
 <?php
 
-
 namespace App\Infrastructure\Doctrine\Validator;
 
 use Symfony\Component\Validator\Constraint;
@@ -14,7 +13,7 @@ use Symfony\Component\Validator\Constraint;
     public string $entityClass;
     public string $field;
 
-    public function __construct(string $entityClass, string $field, string $message = null, array $groups = null, mixed $payload = null)
+    public function __construct(string $entityClass, string $field, ?string $message = null, ?array $groups = null, mixed $payload = null)
     {
         parent::__construct([], $groups, $payload);
         $this->entityClass = $entityClass;

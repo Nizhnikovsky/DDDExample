@@ -1,6 +1,5 @@
 <?php
 
-
 namespace App\Presentation\Mapper\Team;
 
 use App\Domain\Team\Model\TeamPlayer;
@@ -13,6 +12,6 @@ class TeamPlayerToTeamPlayerResponseDTOMapping implements AutoMapperConfigurator
     public function configure(AutoMapperConfigInterface $config): void
     {
         $config->registerMapping(TeamPlayer::class, TeamPlayerResponseDTO::class)
-            ->forMember('playerId', fn(TeamPlayer $teamPlayer): string => $teamPlayer->getPlayerId()->value());
+            ->forMember('playerId', fn (TeamPlayer $teamPlayer): string => $teamPlayer->getPlayerId()->value());
     }
 }

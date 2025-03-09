@@ -1,6 +1,5 @@
 <?php
 
-
 namespace App\Presentation\DTO\Request\Team;
 
 use Symfony\Component\Validator\Constraints as Assert;
@@ -35,9 +34,10 @@ readonly class CreateTeamDTO
         public string $stadium,
 
         #[Assert\NotBlank(message: 'Year cannot be empty.')]
-        #[Assert\Type(type: 'integer', message: "Year must be a valid number.")]
+        #[Assert\Type(type: 'integer', message: 'Year must be a valid number.')]
         public int $yearFounded,
-    ){}
+    ) {
+    }
 
     #[Assert\Callback]
     public function validateYear(ExecutionContextInterface $context): void

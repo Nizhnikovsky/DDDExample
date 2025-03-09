@@ -1,6 +1,5 @@
 <?php
 
-
 namespace App\Infrastructure\Listeners;
 
 use App\Shared\Exception\ApiExceptionInterface;
@@ -16,7 +15,9 @@ use Symfony\Component\Validator\Exception\ValidationFailedException;
 #[AsEventListener(event: ExceptionEvent::class)]
 class ExceptionListener
 {
-    public function __construct(private readonly LoggerInterface $logger) {}
+    public function __construct(private readonly LoggerInterface $logger)
+    {
+    }
 
     public function __invoke(ExceptionEvent $event): void
     {
@@ -34,9 +35,7 @@ class ExceptionListener
             $statusCode = $exception->getStatusCode();
             $responseData['error'] = 'Validation failed';
             $responseData['validation_errors'] = $this->formatValidationErrors($exception->getPrevious()->getViolations());
-        }
-
-        elseif ($exception instanceof HttpExceptionInterface || $exception instanceof ApiExceptionInterface) {
+        } elseif ($exception instanceof HttpExceptionInterface || $exception instanceof ApiExceptionInterface) {
             $statusCode = $exception->getStatusCode();
             $responseData['error'] = $exception->getMessage();
         } else {
@@ -56,6 +55,7 @@ class ExceptionListener
         foreach ($violations as $violation) {
             $errors[$violation->getPropertyPath()] = $violation->getMessage();
         }
+
         return $errors;
     }
 }

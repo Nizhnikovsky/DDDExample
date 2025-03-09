@@ -1,6 +1,5 @@
 <?php
 
-
 namespace App\Presentation\DTO\Request\Player;
 
 use App\Domain\Player\Enum\PlayerPositionEnum;
@@ -17,6 +16,6 @@ class UpdatePlayerDTO
 
         #[Assert\Choice(callback: [PlayerPositionEnum::class, 'values'], message: 'Invalid option selected.')]
         public string $position,
-    ){
+    ) {
     }
 }

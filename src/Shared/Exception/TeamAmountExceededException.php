@@ -1,6 +1,5 @@
 <?php
 
-
 namespace App\Shared\Exception;
 
 class TeamAmountExceededException extends \Exception implements ApiExceptionInterface
